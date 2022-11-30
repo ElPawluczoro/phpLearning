@@ -27,7 +27,8 @@
     $warrior1 = new Warrior(10,3,"Danik");
     $warrior1->DisplayInformation();
 
-    Fight($warrior1, $goblin1);
+$goblin1->displayDropList();
+    //Fight($warrior1, $goblin1);
      ?>
   </body>
 </html>
