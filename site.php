@@ -9,7 +9,9 @@
     require_once "Classes/Unit/Monster.php";
     require_once "Classes/Unit/Hero.php";
     require_once "Classes/Unit/Unit.php";
-
+    require_once "Classes/Items/Item.php";
+    require_once "Classes/Items/Currency.php";
+    require_once "Classes/Items/Weapon.php";
     // foreach (glob("Classes/Unit/*.php") as $filename) {
     //   include $filename;
     // }
@@ -21,14 +23,15 @@
       }
     }
 
-    $goblin1 = new Goblin();
-    $goblin1->DisplayInformation();
+      $weapon1 = new Sword(3, "Rusty Sword");
+      $weapon1->DisplayInformation();
 
-    $warrior1 = new Warrior(10,3,"Danik");
-    $warrior1->DisplayInformation();
+      $weapon2 = new Mace(2, "Rusty Mace");
+      $weapon2->DisplayInformation();
 
-$goblin1->displayDropList();
-    //Fight($warrior1, $goblin1);
+      $weapon3 = new Bow(1, "Simply Bow");
+      $weapon3->DisplayInformation();
+
      ?>
   </body>
 </html>

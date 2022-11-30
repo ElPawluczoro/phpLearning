@@ -1,5 +1,6 @@
 <?php
 require_once "Unit.php";
+
 abstract class Monster extends Unit{
   protected $dropList;
 
@@ -19,7 +20,6 @@ class Goblin extends Monster{
     $this->armour = 1;
     $this->name = "Goblin";
     $this->dropList = array("Gold", "Rusty Sword", "Goblin totem");
-
   }
 }
 
