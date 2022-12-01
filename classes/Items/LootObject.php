@@ -11,9 +11,9 @@ class LootObject extends NonCurrencyItem{
     $this->quantity = $q;
   }
 
-  function GetName() : string {
-    return $this->name;
-  }
+  // function GetName() : string {
+  //   return $this->name;
+  // }
 
   function GetQuantity() : int {
     return $this->quantity;

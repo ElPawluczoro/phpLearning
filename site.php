@@ -24,10 +24,21 @@
       }
     }
 
-      $loot1 = new LootObject("Stick", 5, 1);
-      $loot1->DisplayInformation();
+    $goblin1 = new Goblin();
+    $goblin1->DisplayInformation();
+    $goblin1->displayDropList();
 
+    $orc1 = new Orc();
+    $orc1->DisplayInformation();
+    $orc1->displayDropList();
 
+    $zombie1 = new Zombie();
+    $zombie1->DisplayInformation();
+    $zombie1->displayDropList();
+
+    $bandit1 = new Bandit();
+    $bandit1->DisplayInformation();
+    $bandit1->displayDropList();
 
 
 

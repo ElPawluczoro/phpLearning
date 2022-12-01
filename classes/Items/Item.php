@@ -13,6 +13,10 @@ abstract class Item {
     echo "$this->name:<br>
           ";
   }
+
+  function GetName() : string {
+    return $this->name;
+  }
 }
 
 abstract class NonCurrencyItem extends Item{
