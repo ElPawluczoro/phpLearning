@@ -7,6 +7,10 @@ require_once "Classes/Items/LootObject.php";
 abstract class Monster extends Unit{
   protected $dropList;
 
+  function GetDropList() : array{
+    return $this->dropList;
+  }
+
   function displayDropList(){
     echo "$this->name Drop List:<br>";
     foreach ($this->dropList as $value) {

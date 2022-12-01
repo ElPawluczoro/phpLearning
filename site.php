@@ -13,24 +13,15 @@
     require_once "Classes/Items/Currency.php";
     require_once "Classes/Items/Weapon.php";
     require_once "Classes/Items/LootObject.php";
+    require_once "Classes/Fight/Fight.php";
     // foreach (glob("Classes/Unit/*.php") as $filename) {
     //   include $filename;
     // }
 
-    function Fight(Unit $unit1, Unit $unit2){
-      while($unit1->IsAlive() && $unit2->IsAlive()){
-        $unit1->DealDamage($unit2);
-        $unit2->DealDamage($unit1);
-      }
-    }
-
     $warrior1 = new Warrior(10, 5, "Danik");
-    $warrior1->DisplayInformation();
-    //array_push($warrior1->pocket, new Coins(0));
+    Fight::Fight($warrior1, new Goblin());
+    $warrior1->DisplayEquipment();
     $warrior1->DisplayPocket();
-    $warrior1->AddToPocket(new Coins(10));
-    $warrior1->DisplayPocket();
-    $warrior1->pocket[0]->DisplayInformation();
 
 
 

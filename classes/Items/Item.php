@@ -14,6 +14,10 @@ abstract class Item {
           ";
   }
 
+  function GetKind() : ItemKind{
+    return $this->kind;
+  }
+
   function GetName() : string {
     return $this->name;
   }
