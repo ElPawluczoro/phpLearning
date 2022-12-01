@@ -15,6 +15,14 @@ abstract class Item {
   }
 }
 
+abstract class NonCurrencyItem extends Item{
+  protected $value;
+
+  function DisplayInformation(){
+    parent::DisplayInformation();
+    echo "Value: $this->value<br>";
+  }
+}
 
 
 

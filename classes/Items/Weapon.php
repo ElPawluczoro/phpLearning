@@ -7,14 +7,15 @@ enum WeaponKind{
   case BOW;
 }
 
-class Weapon extends Item{
+class Weapon extends NonCurrencyItem{
   protected $weaponKind;
   protected $damage;
 
-  function __construct(int $d, string $n){
+  function __construct(int $d, string $n, int $v){
     $this->kind = ItemKind::WEAPON;
     $this->damage = $d;
     $this->name = $n;
+    $this->value = $v;
   }
 
   function DisplayInformation(){
@@ -25,24 +26,24 @@ class Weapon extends Item{
 
 class Sword extends Weapon{
 
-  function __construct(int $d, string $n){
-    parent::__construct($d, $n);
+  function __construct(int $d, string $n, int $v){
+    parent::__construct($d, $n, $v);
     $this->weaponKind = WeaponKind::SWORD;
   }
 }
 
 class Mace extends Weapon{
 
-  function __construct(int $d, string $n){
-    parent::__construct($d, $n);
+  function __construct(int $d, string $n, int $v){
+    parent::__construct($d, $n, $v);
     $this->weaponKind = WeaponKind::MACE;
   }
 }
 
 class Bow extends Weapon{
 
-  function __construct(int $d, string $n){
-    parent::__construct($d, $n);
+  function __construct(int $d, string $n, int $v){
+    parent::__construct($d, $n, $v);
     $this->weaponKind = WeaponKind::BOW;
   }
 }

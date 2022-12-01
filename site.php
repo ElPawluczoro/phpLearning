@@ -12,6 +12,7 @@
     require_once "Classes/Items/Item.php";
     require_once "Classes/Items/Currency.php";
     require_once "Classes/Items/Weapon.php";
+    require_once "Classes/Items/LootObject.php";
     // foreach (glob("Classes/Unit/*.php") as $filename) {
     //   include $filename;
     // }
@@ -23,14 +24,14 @@
       }
     }
 
-      $weapon1 = new Sword(3, "Rusty Sword");
-      $weapon1->DisplayInformation();
+      $loot1 = new LootObject("Stick", 5, 1);
+      $loot1->DisplayInformation();
 
-      $weapon2 = new Mace(2, "Rusty Mace");
-      $weapon2->DisplayInformation();
 
-      $weapon3 = new Bow(1, "Simply Bow");
-      $weapon3->DisplayInformation();
+
+
+
+
 
      ?>
   </body>
