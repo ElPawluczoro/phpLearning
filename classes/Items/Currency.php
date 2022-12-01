@@ -23,8 +23,6 @@ class Currency extends Item{
     $this->kind = ItemKind::CURRENCY;
   }
 
-
-
   function AddCurrency(Currency $cr){
     if($this->currencyType==$cr->GetCurrencyType()){
       $this->quantity += $cr->GetQuantity();

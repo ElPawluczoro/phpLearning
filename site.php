@@ -24,21 +24,22 @@
       }
     }
 
-    $goblin1 = new Goblin();
-    $goblin1->DisplayInformation();
-    $goblin1->displayDropList();
+    $warrior1 = new Warrior(10, 5, "Danik");
+    $warrior1->DisplayInformation();
+    //array_push($warrior1->pocket, new Coins(0));
+    $warrior1->DisplayPocket();
+    $warrior1->AddToPocket(new Coins(10));
+    $warrior1->DisplayPocket();
+    $warrior1->pocket[0]->DisplayInformation();
 
-    $orc1 = new Orc();
-    $orc1->DisplayInformation();
-    $orc1->displayDropList();
 
-    $zombie1 = new Zombie();
-    $zombie1->DisplayInformation();
-    $zombie1->displayDropList();
 
-    $bandit1 = new Bandit();
-    $bandit1->DisplayInformation();
-    $bandit1->displayDropList();
+
+
+
+
+
+
 
 
 

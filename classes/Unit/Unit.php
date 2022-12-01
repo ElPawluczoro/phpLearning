@@ -8,7 +8,7 @@ abstract class Unit{
 
   public function DisplayInformation(){
 
-    echo $this->name . "<br>";
+    echo "Name: $this->name <br>";
     echo "Health Points: $this->healthPoints<br>
           Damage: $this->damage<br>
           Armour: $this->armour<br>";
