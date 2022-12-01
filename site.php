@@ -20,8 +20,7 @@
 
     $warrior1 = new Warrior(10, 5, "Danik");
     Fight::Fight($warrior1, new Goblin());
-    $warrior1->DisplayEquipment();
-    $warrior1->DisplayPocket();
+    $warrior1->DisplayInformation();
 
 
 

@@ -14,7 +14,9 @@ class Fight {
       $lootItem = $m->GetDropList()[$randomitem];
       if($lootItem->GetKind()==ItemKind::CURRENCY) $h->AddToPocket($lootItem);
       else $h->AddToEquipment($lootItem);
+      $h->GiveExpieriencePoints($m->GetExpieriencePointsGiven());
       echo "You have got:<br>";
+      echo $m->GetExpieriencePointsGiven()."xp<br>";
       echo $lootItem->DisplayInformation();
       echo "---------------------<br>";
     }

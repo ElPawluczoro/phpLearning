@@ -4,15 +4,106 @@ require_once "Classes/Items/Currency.php";
 require_once "Classes/Items/Weapon.php";
 require_once "Classes/Items/LootObject.php";
 
+enum Level : int{
+  case LEVEL1 = 100;
+  case LEVEL2 = 500;
+  case LEVEL3 = 2000;
+  case LEVEL4 = 10000;
+  case LEVEL5 = 50000;
+  case LEVEL6 = 200000;
+  case LEVEL7 = 0;
+}
+
 abstract class Hero extends Unit{
 
   public $equipment = array();
   public $pocket = array();
 
+  protected $level;
+  protected $expieriencePoints;
+  protected $maxExpieriencePoints;
+
   function __construct(float $hp, float $dmg, string $n){
     parent::__construct($hp, $dmg);
     $this->name = $n;
+    $this->level = Level::LEVEL1;
+    $this->SetMaxExpieriencePoints();
+    $this->expieriencePoints = 0;
     }
+
+    function GetExpieriencePoints(){
+      return $this->expieriencePoints;
+    }
+
+    function GetLevel(){
+      return $this->level;
+    }
+
+    function GetMaxExpieriencePoints(){
+      return $this->maxExpieriencePoints;
+    }
+
+    function SetMaxExpieriencePoints(){
+      $this->maxExpieriencePoints = $this->level->value;
+      }
+
+      function ReturnLevelString() : string {
+        switch ($this->level) {
+          case Level::LEVEL1:
+            return "1";
+            break;
+          case Level::LEVEL2:
+            return "2";
+            break;
+          case Level::LEVEL3:
+            return "3";
+            break;
+          case Level::LEVEL4:
+            return "4";
+            break;
+          case Level::LEVEL5:
+            return "5";
+            break;
+          case Level::LEVEL6:
+            return "6";
+            break;
+          default:
+            return "7";
+            break;
+        }
+      }
+
+    function GiveExpieriencePoints(int $exp){
+      if($this->level!=Level::LEVEL7){
+        $this->expieriencePoints+=$exp;
+        if($this->expieriencePoints>=$this->maxExpieriencePoints){
+          $this->expieriencePoints-=$this->maxExpieriencePoints;
+          echo "LEVEL UP!";
+          //echo $this->level."->"$this->level+1."<br>";
+          if($this->level==Level::LEVEL1){
+            $this->level=Level::LEVEL2;
+            echo "1->2<br>";
+          }else if($this->level==Level::LEVEL2){
+            $this->level=Level::LEVEL3;
+            echo "2->3<br>";
+          }else if($this->level==Level::LEVEL3){
+            $this->level=Level::LEVEL4;
+            echo "3->4<br>";
+          }else if($this->level==Level::LEVEL4){
+            $this->level=Level::LEVEL5;
+            echo "4->5<br>";
+          }else if($this->level==Level::LEVEL5){
+            $this->level=Level::LEVEL6;
+            echo "5->6<br>";
+          }else if($this->level==Level::LEVEL6){
+            $this->level=Level::LEVEL7;
+            echo "6->7<br>";
+          }else echo "Something unexpected happend<br>";
+          $this->SetMaxExpieriencePoints();
+        }
+      }
+    }
+
 
     function AddToEquipment(NonCurrencyItem $item){
       array_push($this->equipment, $item);
@@ -50,7 +141,10 @@ class Warrior extends Hero{
   protected $className = "Warrior";
 
   function DisplayInformation(){
-    echo "Class: $this->className<br>";
+    echo "Class: $this->className<br>
+          Level: " . $this->ReturnLevelString() . "<br>
+          XP: $this->expieriencePoints<br>
+          Max XP: $this->maxExpieriencePoints<br>";
     parent::DisplayInformation();
   }
 
