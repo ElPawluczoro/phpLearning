@@ -18,6 +18,10 @@ class Weapon extends NonCurrencyItem{
     $this->value = $v;
   }
 
+function GetDamage() : int {
+  return $this->damage;
+}
+
   function DisplayInformation(){
     parent::DisplayInformation();
     echo "Damage: $this->damage<br>";

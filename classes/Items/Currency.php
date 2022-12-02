@@ -35,7 +35,7 @@ class Currency extends Item{
     }
   }
 
-  function  DisplayInformation(){
+  function DisplayInformation(){
     parent::DisplayInformation();
     echo "Quantity: $this->quantity<br>";
   }
@@ -47,4 +47,10 @@ class Coins extends Currency{
     $this->name ="Coins";
     $this->currencyType = CurrencyType::COINS;
   }
-} ?>
+
+    // static function __mul(int $m, Coins $c) : Coins{
+    //   return new Coins($c->GetQuantity*$m);
+    // }
+}
+
+?>

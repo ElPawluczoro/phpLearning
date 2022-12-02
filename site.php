@@ -14,13 +14,18 @@
     require_once "Classes/Items/Weapon.php";
     require_once "Classes/Items/LootObject.php";
     require_once "Classes/Fight/Fight.php";
+    require_once "Classes/Location/Location.php";
+    require_once "Classes/Location/Place.php";
+    require_once "Classes/Items/GenerateItem.php";
     // foreach (glob("Classes/Unit/*.php") as $filename) {
     //   include $filename;
     // }
 
-    $warrior1 = new Warrior(10, 5, "Danik");
-    Fight::Fight($warrior1, new Goblin());
-    $warrior1->DisplayInformation();
+    $weapon1 = GenerateItem::GenerateMeleWeapon(Level::LEVEL1);
+    $weapon1->DisplayInformation();
+
+
+
 
 
 

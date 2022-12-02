@@ -43,6 +43,10 @@ abstract class Hero extends Unit{
       return $this->maxExpieriencePoints;
     }
 
+    function GetEquipment() : array {
+      return $this->equipment;
+    }
+
     function SetMaxExpieriencePoints(){
       $this->maxExpieriencePoints = $this->level->value;
       }
@@ -109,10 +113,24 @@ abstract class Hero extends Unit{
       array_push($this->equipment, $item);
     }
 
+    function RemoveFromEquipment($i){
+      // unset($this->equipment[$i-1]);
+      // array_values($this->equipment);
+      array_splice($this->equipment,$i-1,1);
+
+    }
+
     function DisplayEquipment(){
+      $i=0;
       echo "$this->name equipment:<br>";
       foreach ($this->equipment as $value) {
-        echo $value->GetName()." <br>";
+        $i++;
+        echo "$i." . $value->GetName();
+        if ($value->GetKind()==ItemKind::LOOT_OBJECT){
+          echo " (" . $value->GetQuantity() . ")<br>";
+        }else if ($value->GetKind()==ItemKind::WEAPON){
+          echo " d" . $value->GetDamage() . "<br>";
+        }
       }
       echo "---------------------<br>";
     }
@@ -127,6 +145,35 @@ abstract class Hero extends Unit{
     }
     if(!$exists) array_push($this->pocket, $c);
   }
+
+  function IsCurrencyEnough(Currency $c) : bool {
+    $exists=false;
+  for($i = 0 ; $i < count($this->pocket); $i++){
+    if($this->pocket[$i]->GetCurrencyType()==$c->GetCurrencyType()
+        && $this->pocket[$i]->GetQuantity()>=$c->GetQuantity()){
+      $exists=true;
+      break;
+    }
+  }
+  return $exists;
+}
+
+  function SpendCurrency(Currency $c){
+    $exists=false;
+    for($i = 0 ; $i < count($this->pocket); $i++){
+      if($this->pocket[$i]->GetCurrencyType()==$c->GetCurrencyType()
+          && $this->pocket[$i]->GetQuantity()>=$c->GetQuantity()){
+        $this->pocket[$i]->SubtractCurrency($c);
+        $exists=true;
+        break;
+      }else {
+        $exists=false;
+        echo"Not enough currency<br>";
+      }
+    }
+  }
+
+
 
   function DisplayPocket(){
     echo "$this->name Pocket:<br>";

@@ -32,7 +32,7 @@ class Goblin extends Monster{
     $this->name = "Goblin";
     $this->armour = 1;
     $this->dropList = array(new Coins(rand(5,15)), new Sword(2, "Rusty Sword", 6), new LootObject("Goblin Totem", 3, rand(1,2)));
-    $this->expieriencePointsGiven = 105; //TODO change to 5
+    $this->expieriencePointsGiven = 5;
   }
 }
 
