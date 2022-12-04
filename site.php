@@ -23,6 +23,10 @@
 
     $weapon1 = GenerateItem::GenerateMeleWeapon(Level::LEVEL1);
     $weapon1->DisplayInformation();
+    $weapon2 = GenerateItem::GenerateMeleWeapon(Level::LEVEL2);
+    $weapon2->DisplayInformation();
+    $weapon3 = GenerateItem::GenerateMeleWeapon(Level::LEVEL3);
+    $weapon3->DisplayInformation();
 
 
 

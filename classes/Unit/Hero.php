@@ -14,6 +14,34 @@ enum Level : int{
   case LEVEL7 = 0;
 }
 
+class HeroMethods {
+  static function LevelToInt(Level $l) : int{
+    switch ($l) {
+      case  Level::LEVEL1:
+        return 1;
+        break;
+      case  Level::LEVEL2:
+        return 2;
+        break;
+      case  Level::LEVEL3:
+        return 3;
+        break;
+      case  Level::LEVEL4:
+        return 4;
+        break;
+      case  Level::LEVEL5:
+        return 5;
+        break;
+      case  Level::LEVEL6:
+        return 6;
+        break;
+      default: // Level::LEVEL7
+        return 7;
+        break;
+    }
+  }
+}
+
 abstract class Hero extends Unit{
 
   public $equipment = array();

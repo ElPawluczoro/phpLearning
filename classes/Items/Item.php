@@ -36,6 +36,10 @@ abstract class NonCurrencyItem extends Item{
   }
 }
 
+abstract class EquipableItem extends NonCurrencyItem {
+  protected $requaierdLevel;
+}
+
 
 
 
