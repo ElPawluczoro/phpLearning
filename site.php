@@ -21,14 +21,18 @@
     //   include $filename;
     // }
 
-    $weapon1 = GenerateItem::GenerateMeleWeapon(Level::LEVEL1);
-    $weapon1->DisplayInformation();
-    $weapon2 = GenerateItem::GenerateMeleWeapon(Level::LEVEL2);
-    $weapon2->DisplayInformation();
-    $weapon3 = GenerateItem::GenerateMeleWeapon(Level::LEVEL3);
-    $weapon3->DisplayInformation();
-
-
+    $warrior1 = new Warrior(10, 1, "Danik");
+    $warrior1->DisplayInformation();
+    $warrior1->AddToEquipment(GenerateItem::GenerateMeleWeapon(Level::LEVEL1));
+    $warrior1->DisplayEquipment();
+    $warrior1->EquipItem(1);
+    $warrior1->DisplayGear();
+    $warrior1->DisplayEquipment();
+    $warrior1->DisplayInformation();
+    $warrior1->UnequipItem(ItemKind::WEAPON);
+    $warrior1->DisplayGear();
+    $warrior1->DisplayEquipment();
+    $warrior1->DisplayInformation();
 
 
 

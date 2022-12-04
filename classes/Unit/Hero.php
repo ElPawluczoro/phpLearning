@@ -43,10 +43,16 @@ class HeroMethods {
 }
 
 abstract class Hero extends Unit{
-
   public $equipment = array();
   public $pocket = array();
 
+  //equiped stuff
+  protected $head;
+  protected $body;
+  protected $mainHand;
+  protected $boots;
+
+  //Level
   protected $level;
   protected $expieriencePoints;
   protected $maxExpieriencePoints;
@@ -78,6 +84,23 @@ abstract class Hero extends Unit{
     function SetMaxExpieriencePoints(){
       $this->maxExpieriencePoints = $this->level->value;
       }
+
+    function EquipItem(int $i){
+      $item = $this->equipment[$i-1];
+      if ($item->GetKind() == ItemKind::WEAPON){
+        $this->mainHand = $item;
+        $this->damage+=$item->GetDamage();
+        $this->RemoveFromEquipment($i);
+      }
+    }
+
+    function UnequipItem(ItemKind $i){
+      if ($i == ItemKind::WEAPON ){
+        $this->damage-=$this->mainHand->GetDamage();
+        $this->AddToEquipment($this->mainHand);
+        $this->mainHand = NULL;
+      }
+    }
 
       function ReturnLevelString() : string {
         switch ($this->level) {
@@ -142,10 +165,7 @@ abstract class Hero extends Unit{
     }
 
     function RemoveFromEquipment($i){
-      // unset($this->equipment[$i-1]);
-      // array_values($this->equipment);
       array_splice($this->equipment,$i-1,1);
-
     }
 
     function DisplayEquipment(){
@@ -160,6 +180,13 @@ abstract class Hero extends Unit{
           echo " d" . $value->GetDamage() . "<br>";
         }
       }
+      echo "---------------------<br>";
+    }
+
+    function DisplayGear() {
+      echo "Gear<br>";
+      echo "Head: "; if(isset($this->head)) echo $this->head->GetName(); echo "<br>";
+      echo "Main Hand: "; if(isset($this->mainHand)) echo $this->mainHand->GetName() . " d" . $this->mainHand->GetDamage(); echo "<br>";
       echo "---------------------<br>";
     }
 

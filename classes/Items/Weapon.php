@@ -11,6 +11,7 @@ enum WeaponKind{
 class Weapon extends EquipableItem{
   protected $weaponKind;
   protected $damage;
+  protected $eqKind;
 
   function __construct(int $d, string $n, int $v, Level $rq){
     $this->kind = ItemKind::WEAPON;
