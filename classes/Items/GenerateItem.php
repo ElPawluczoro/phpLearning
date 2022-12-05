@@ -373,6 +373,249 @@ class GenerateItem {
           // code...
           break;
         }
+        case ItemKind::GLOVES:
+          switch ($l) {
+            case Level::LEVEL1:
+          //1
+          $name1 = "Badly Made ";
+          $hp1h = rand(1,3);
+          $armour1h = 0;
+          $hp1m = rand(1,2);
+          $armour1m = 0;
+          $hp1l = 1;
+          $armour1l = 0;
+          $value1 = rand(4,6);
+          $name2 = "";
+          $hp2h = rand(2,4);
+          $armour2h = 0;
+          $hp2m = rand(2,3);
+          $armour2m = 0;
+          $hp2l = 2;
+          $armour2l = 0;
+          $value2 = rand(6,10);
+          $name3 = "Good Made ";
+          $hp3h = rand(4,6);
+          $armour3h = 1;
+          $hp3m = rand(4,6);
+          $armour3m = 0;
+          $hp3l = rand(2,4);
+          $armour3l = 0;
+          $value3 = rand(10,15);
+          //2
+          $name1h_2 = "Cheap Copper ";
+          $hp1h_2 = rand(1,2);
+          $armour1h_2 = 0;
+          $name1m_2 = "Poor Lether ";
+          $hp1m_2 = 1;
+          $armour1m_2 = 0;
+          $name1l_2 = "Poor Cloth ";
+          $hp1l_2 = rand(0,1);
+          $armour1l_2 = 0;
+          $value1_2 = rand(5,8);
+
+          $name2h_2 = "Copper ";
+          $hp2h_2 = rand(2,3);
+          $armour2h_2 = 0;
+          $name2m_2 = "Lether ";
+          $hp2m_2 = rand(1,2);
+          $armour2m_2 = 0;
+          $name2l_2 = "Cloth ";
+          $hp2l_2 = 1;
+          $armour2l_2 = 1;
+          $value2_2 = rand(6,9);
+
+          $name3h_2 = "Good Copper ";
+          $hp3h_2 = rand(3,5);
+          $armour3h_2 = rand(0,1);
+          $name3m_2 = "Strong Lether ";
+          $hp3m_2 = rand(2,3);
+          $armour3m_2 = rand(0,1);
+          $name3l_2 = "Expensive Cloth ";
+          $hp3l_2 = rand(2,3);
+          $armour3l_2 = 0;
+          $value3_2 = rand(9,13);
+          break;
+        case Level::LEVEL2:
+          // code...
+          break;
+        case Level::LEVEL3:
+          // code...
+          break;
+        case Level::LEVEL4:
+          // code...
+          break;
+        case Level::LEVEL5:
+          // code...
+          break;
+        case Level::LEVEL6:
+          // code...
+          break;
+        default: //LEVEL7 i guess
+          // code...
+          break;
+        }
+        case ItemKind::LEGS_ARMOUR:
+          switch ($l) {
+            case Level::LEVEL1:
+          //1
+          $name1 = "Badly Made ";
+          $hp1h = rand(2,3);
+          $armour1h = rand(1,2);
+          $hp1m = rand(1,2);
+          $armour1m = rand(0,1);
+          $hp1l = rand(1,2);
+          $armour1l = 0;
+          $value1 = rand(6,10);
+          $name2 = "";
+          $hp2h = rand(3,4);
+          $armour2h = rand(2,3);
+          $hp2m = rand(2,3);
+          $armour2m = rand(1,2);
+          $hp2l = rand(1,3);
+          $armour2l = rand(0,1);
+          $value2 = rand(9,15);
+          $name3 = "Good Made ";
+          $hp3h = rand(5,7);
+          $armour3h = rand(3,4);
+          $hp3m = rand(4,6);
+          $armour3m = 3;
+          $hp3l = rand(2,4);
+          $armour3l = rand(1,2);
+          $value3 = rand(14,19);
+          //2
+          $name1h_2 = "Cheap Copper ";
+          $hp1h_2 = rand(2,3);
+          $armour1h_2 = 0;
+          $name1m_2 = "Poor Lether ";
+          $hp1m_2 = rand(1,2);
+          $armour1m_2 = 0;
+          $name1l_2 = "Poor Cloth ";
+          $hp1l_2 = rand(0,1);
+          $armour1l_2 = 0;
+          $value1_2 = rand(7,9);
+
+          $name2h_2 = "Copper ";
+          $hp2h_2 = rand(3,4);
+          $armour2h_2 = 1;
+          $name2m_2 = "Lether ";
+          $hp2m_2 = rand(2,3);
+          $armour2m_2 = rand(0,1);
+          $name2l_2 = "Cloth ";
+          $hp2l_2 = rand(1,2);
+          $armour2l_2 = rand(0,1);
+          $value2_2 = rand(8,13);
+
+          $name3h_2 = "Good Copper ";
+          $hp3h_2 = rand(4,5);
+          $armour3h_2 = rand(1,2);
+          $name3m_2 = "Strong Lether ";
+          $hp3m_2 = rand(3,4);
+          $armour3m_2 = rand(1,2);
+          $name3l_2 = "Expensive Cloth ";
+          $hp3l_2 = rand(3,4);
+          $armour3l_2 = rand(0,1);
+          $value3_2 = rand(13,18);
+          break;
+        case Level::LEVEL2:
+          // code...
+          break;
+        case Level::LEVEL3:
+          // code...
+          break;
+        case Level::LEVEL4:
+          // code...
+          break;
+        case Level::LEVEL5:
+          // code...
+          break;
+        case Level::LEVEL6:
+          // code...
+          break;
+        default: //LEVEL7 i guess
+          // code...
+          break;
+        }
+        case ItemKind::BOOTS:
+          switch ($l) {
+            case Level::LEVEL1:
+          //1
+          $name1 = "Badly Made ";
+          $hp1h = rand(1,3);
+          $armour1h = 0;
+          $hp1m = rand(0,2);
+          $armour1m = 0;
+          $hp1l = rand(0,1);
+          $armour1l = 0;
+          $value1 = rand(5,7);
+          $name2 = "";
+          $hp2h = rand(2,4);
+          $armour2h = rand(0,1);
+          $hp2m = rand(1,3);
+          $armour2m = 0;
+          $hp2l = rand(1,2);
+          $armour2l = 0;
+          $value2 = rand(7,12);
+          $name3 = "Good Made ";
+          $hp3h = rand(3,5);
+          $armour3h = rand(0,2);
+          $hp3m = rand(2,4);
+          $armour3m = rand(0,1);
+          $hp3l = rand(2,3);
+          $armour3l = 0;
+          $value3 = rand(12,15);
+          //2
+          $name1h_2 = "Cheap Copper ";
+          $hp1h_2 = rand(1,2);
+          $armour1h_2 = 0;
+          $name1m_2 = "Poor Lether ";
+          $hp1m_2 = rand(1,2);
+          $armour1m_2 = 0;
+          $name1l_2 = "Poor Cloth ";
+          $hp1l_2 = 1;
+          $armour1l_2 = 0;
+          $value1_2 = rand(6,8);
+
+          $name2h_2 = "Copper ";
+          $hp2h_2 = rand(2,4);
+          $armour2h_2 = rand(0,1);
+          $name2m_2 = "Lether ";
+          $hp2m_2 = rand(1,3);
+          $armour2m_2 = 0;
+          $name2l_2 = "Cloth ";
+          $hp2l_2 = rand(1,2);
+          $armour2l_2 = 0;
+          $value2_2 = rand(7,11);
+
+          $name3h_2 = "Good Copper ";
+          $hp3h_2 = rand(3,5);
+          $armour3h_2 = rand(1,2);
+          $name3m_2 = "Strong Lether ";
+          $hp3m_2 = rand(2,4);
+          $armour3m_2 = rand(0,1);
+          $name3l_2 = "Expensive Cloth ";
+          $hp3l_2 = rand(2,3);
+          $armour3l_2 = 0;
+          $value3_2 = rand(10,14);
+          break;
+        case Level::LEVEL2:
+          // code...
+          break;
+        case Level::LEVEL3:
+          // code...
+          break;
+        case Level::LEVEL4:
+          // code...
+          break;
+        case Level::LEVEL5:
+          // code...
+          break;
+        case Level::LEVEL6:
+          // code...
+          break;
+        default: //LEVEL7 i guess
+          // code...
+          break;
+        }
       }
 
         switch (rand(1,3)){
@@ -430,6 +673,21 @@ class GenerateItem {
               else if($armourKind == ArmourKind::MEDIUM_ARMOUR){$name.="Medium Byrnie";}
               else{$name.="Robe";}
               return new BodyArmour($armour, $hp, $name, $value, $l, $armourKind);
+            case ItemKind::GLOVES:
+              if($armourKind == ArmourKind::HEAVY_ARMOUR){$name.="Heavy Gauntlets";}
+              else if($armourKind == ArmourKind::MEDIUM_ARMOUR){$name.="Gloves";}
+              else{$name.="Thin gloves";}
+              return new Gloves($armour, $hp, $name, $value, $l, $armourKind);
+            case ItemKind::LEGS_ARMOUR:
+              if($armourKind == ArmourKind::HEAVY_ARMOUR){$name.="Heavy Legs";}
+              else if($armourKind == ArmourKind::MEDIUM_ARMOUR){$name.="Chausses";}
+              else{$name.="Chausses";}
+              return new Gloves($armour, $hp, $name, $value, $l, $armourKind);
+            case ItemKind::BOOTS:
+              if($armourKind == ArmourKind::HEAVY_ARMOUR){$name.="Heavy Sabatons";}
+              else if($armourKind == ArmourKind::MEDIUM_ARMOUR){$name.="Rugged Shoes";}
+              else{$name.="Shoes";}
+              return new Gloves($armour, $hp, $name, $value, $l, $armourKind);
             }
           }
         }

@@ -26,6 +26,15 @@ $head1->DisplayInformation();
 $body1 = GenerateItem::GenerateArmour(Level::LEVEL1, ItemKind::BODY_ARMOUR);
 $body1->DisplayInformation();
 
+$gloves1 = GenerateItem::GenerateArmour(Level::LEVEL1, ItemKind::GLOVES);
+$gloves1->DisplayInformation();
+
+$legs1 = GenerateItem::GenerateArmour(Level::LEVEL1, ItemKind::LEGS_ARMOUR);
+$legs1->DisplayInformation();
+
+$shoes1 = GenerateItem::GenerateArmour(Level::LEVEL1, ItemKind::BOOTS);
+$shoes1->DisplayInformation();
+
 
 
 
