@@ -1,8 +1,14 @@
 <?php
 enum ItemKind{
   case CURRENCY;
-  case WEAPON;
   case LOOT_OBJECT;
+  case HEAD_ARMOUR;
+  case BODY_ARMOUR;
+  case GLOVES;
+  case LEGS_ARMOUR;
+  case BOOTS;
+  case WEAPON;
+  case OFF_HAND;
 }
 
 abstract class Item {
@@ -38,6 +44,18 @@ abstract class NonCurrencyItem extends Item{
 
 abstract class EquipableItem extends NonCurrencyItem {
   protected $requaierdLevel;
+
+  function __construct(string $n, int $v, Level $rq){
+    $this->name = $n;
+    $this->value = $v;
+    $this->requaierdLevel = $rq;
+  }
+
+  function DisplayInformation() {
+    parent::DisplayInformation();
+    echo "Requaierd Level: " . HeroMethods::LevelToInt($this->requaierdLevel) . "<br>";
+  }
+
 }
 
 

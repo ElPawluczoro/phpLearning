@@ -11,23 +11,20 @@ enum WeaponKind{
 class Weapon extends EquipableItem{
   protected $weaponKind;
   protected $damage;
-  protected $eqKind;
+  //protected $eqKind; //chyba nic nie robi
 
   function __construct(int $d, string $n, int $v, Level $rq){
+    parent::__construct($n, $v, $rq);
     $this->kind = ItemKind::WEAPON;
     $this->damage = $d;
-    $this->name = $n;
-    $this->value = $v;
-    $this->requaierdLevel = $rq;
   }
 
-function GetDamage() : int {
-  return $this->damage;
+  function GetDamage() : int {
+    return $this->damage;
 }
 
   function DisplayInformation(){
     parent::DisplayInformation();
-    echo "Requaierd Level: " . HeroMethods::LevelToInt($this->requaierdLevel) . "<br>";
     echo "Damage: $this->damage<br>";
     echo "---------------------<br>";
   }
