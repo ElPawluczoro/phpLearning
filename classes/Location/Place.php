@@ -8,8 +8,29 @@ class Place {
 class Shop extends Place{
   protected $goods = array();
 
-function __construct(Item $i){
-  array_push($this->goods, $i);
+function __construct(array $ar){
+  foreach ($ar as  $value) {
+    array_push($this->goods, $value);
+  }
+}
+
+function DisplayGoods(){
+  $armours = array(ItemKind::HEAD_ARMOUR, ItemKind::BODY_ARMOUR, ItemKind::GLOVES,
+                  ItemKind::LEGS_ARMOUR, ItemKind::BOOTS);
+  $i=0;
+  echo "$this->name Goods:<br>";
+  foreach ($this->goods as  $value) {
+    $i++;
+    echo "$i." . $value->GetName();
+    if ($value->GetKind()==ItemKind::LOOT_OBJECT){
+      echo " (" . $value->GetQuantity() . ")<br>";
+    }else if ($value->GetKind()==ItemKind::WEAPON){
+      echo " d" . $value->GetDamage() . "<br>";
+    }else if (in_array($value->GetKind(), $armours)){
+      echo " a" . $value->GetArmour() . " hp" . $value->GetHealthPoints() . "<br>";
+    }
+  }
+  echo "---------------------<br>";
 }
 
 function Buy(int $i, Hero $h){

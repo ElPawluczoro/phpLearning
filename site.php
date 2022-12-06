@@ -20,24 +20,9 @@
     require_once "Classes/Items/GenerateItem.php";
 
 
-$head1 = GenerateItem::GenerateArmour(Level::LEVEL1, ItemKind::HEAD_ARMOUR);
-$head1->DisplayInformation();
-
-$body1 = GenerateItem::GenerateArmour(Level::LEVEL1, ItemKind::BODY_ARMOUR);
-$body1->DisplayInformation();
-
-$gloves1 = GenerateItem::GenerateArmour(Level::LEVEL1, ItemKind::GLOVES);
-$gloves1->DisplayInformation();
-
-$legs1 = GenerateItem::GenerateArmour(Level::LEVEL1, ItemKind::LEGS_ARMOUR);
-$legs1->DisplayInformation();
-
-$shoes1 = GenerateItem::GenerateArmour(Level::LEVEL1, ItemKind::BOOTS);
-$shoes1->DisplayInformation();
-
-$bow1 = GenerateItem::GenerateBow(Level::LEVEL1);
-$bow1->DisplayInformation();
-
+$goods = array(GenerateItem::GenerateArmour(Level::LEVEL1, ItemKind::HEAD_ARMOUR), GenerateItem::GenerateArmour(Level::LEVEL1, ItemKind::HEAD_ARMOUR), GenerateItem::GenerateArmour(Level::LEVEL1, ItemKind::HEAD_ARMOUR), GenerateItem::GenerateArmour(Level::LEVEL1, ItemKind::HEAD_ARMOUR), GenerateItem::GenerateArmour(Level::LEVEL1, ItemKind::HEAD_ARMOUR), GenerateItem::GenerateArmour(Level::LEVEL1, ItemKind::HEAD_ARMOUR));
+$shop1 = new shop($goods);
+$shop1->DisplayGoods();
 
 
 
