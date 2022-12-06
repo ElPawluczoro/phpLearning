@@ -35,6 +35,9 @@ $legs1->DisplayInformation();
 $shoes1 = GenerateItem::GenerateArmour(Level::LEVEL1, ItemKind::BOOTS);
 $shoes1->DisplayInformation();
 
+$bow1 = GenerateItem::GenerateBow(Level::LEVEL1);
+$bow1->DisplayInformation();
+
 
 
 

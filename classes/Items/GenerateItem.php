@@ -129,7 +129,6 @@ class GenerateItem {
         // code...
         break;
     }
-
     switch (rand(1,2)){
       case 1:
         $name.= "Sword";
@@ -146,51 +145,136 @@ class GenerateItem {
     }
   }
 
-  // static function GenerateArmour(){
-  //   switch (rand(1,3)){
-  //     case 1:
-  //       $name = $name1;
-  //       if($armourKind == HEAVY_ARMOUR){$hp+=$hp1h; $armour+=$armour1h;}
-  //       else if($armourKind == MEDIUM_ARMOUR) {$hp+=$hp1m; $armour+=$armour1m;}
-  //       else {$hp+=$hp1l; $armour+=$armour1l;}
-  //       $value+=$value1;
-  //       break;
-  //     case 2:
-  //       $name = $name2;
-  //       if($armourKind == HEAVY_ARMOUR){$hp+=$hp2h; $armour+=$armour2h;}
-  //       else if($armourKind == MEDIUM_ARMOUR) {$hp+=$hp2m; $armour+=$armour2m;}
-  //       else {$hp+=$hp2l; $armour+=$armour2l;}
-  //       $value+=$value2;
-  //       break;
-  //     case 3:
-  //       $name = $name3;
-  //       if($armourKind == HEAVY_ARMOUR){$hp+=$hp3h; $armour+=$armour3h;}
-  //       else if($armourKind == MEDIUM_ARMOUR) {$hp+=$hp3m; $armour+=$armour3m;}
-  //       else {$hp=$hp3l; $armour+=$armour3l;}
-  //       $value+=$value3;
-  //       break;
-  //   }
-  //   switch (rand(1,3)){
-  //     case 1:
-  //       if($armourKind == HEAVY_ARMOUR){$name+=$name1h_2; $hp+=$hp1h_2; $armour+=$armour1h_2;}
-  //       else if($armourKind == MEDIUM_ARMOUR) {$name+=$name1m_2; $hp+=$hp1m_2; $armour+=$armour1m_2;}
-  //       else {$name+=$name1l_2; $hp+=$hp1l_2; $armour+=$armour1l_2;}
-  //       $value+=$value1_2;
-  //       break;
-  //     case 2:
-  //       if($armourKind == HEAVY_ARMOUR){$name+=$name2h_2; $hp+=$hp2h_2; $armour+=$armour2h_2;}
-  //       else if($armourKind == MEDIUM_ARMOUR){$name+=$name2m_2; $hp+=$hp2m_2; $armour+=$armour2m_2;}
-  //       else {$name+=$name2l_2; $hp+=$hp2l_2; $armour+=$armour2l_2;}
-  //       $value+=$value2_2;
-  //       break;
-  //     case 3:
-  //       if($armourKind == HEAVY_ARMOUR){$name+=$name3h_2; $hp+=$hp3h_2; $armour+=$armour3h_2;}
-  //       else if($armourKind == MEDIUM_ARMOUR){$name+=$name3m_2; $hp+=$hp3m_2; $armour+=$armour3m_2;}
-  //       else {$name+=$name3l_2; $hp+=$hp3l_2; $armour+=$armour3l_2;}
-  //       $value+=$value3_2;
-  //       break;
-  //   }
-  // }
+    static function GenerateBow(Level $l) : Bow{
+      $damage;
+      $name;
+      $value;
+      switch ($l) {
+        case Level::LEVEL1:
+        switch (rand(1,3)) {
+          case 1:
+            $name = "Broken ";
+            $damage = rand(0,1);
+            $value = rand(8,10);
+            break;
+          case 2:
+            $name = "Badly made ";
+            $damage = rand(1,2);
+            $value = rand(7,12);
+            break;
+          case 3:
+            $damage = rand(2,3);
+            $name = "Simply ";
+            $value = rand(13,18);
+            break;
+          }
+        switch (rand(1,3)){
+          case 1:
+            $name.="Short Oak ";
+            $damage+=rand(2,3);
+            $value+=rand(9,11);
+            break;
+          case 2:
+            $name.="Oak ";
+            $damage+=rand(3,4);
+            $value+=rand(16,25);
+            break;
+          case 3:
+            $name.="Long Oak ";
+            $damage+=rand(4,5);
+            $value+=rand(25,40);
+            break;
+          }
+          break;
+          case Level::LEVEL2:
+          switch (rand(1,3)) {
+            case 1:
+              $name = "";
+              $damage = rand(1,2);
+              $value = rand(11,22);
+              break;
+            case 2:
+              $name = "Good Made ";
+              $damage = rand(2,3);
+              $value = rand(17,25);
+              break;
+            case 3:
+              $damage = rand(3,4);
+              $name = "Perfectly Made ";
+              $value = rand(30,43);
+              break;
+            }
+          switch (rand(1,3)){
+            case 1:
+              $name.="Short Red Oak ";
+              $damage+=rand(3,4);
+              $value+=rand(31,35);
+              break;
+            case 2:
+              $name.="Red Oak ";
+              $damage+=rand(4,5);
+              $value+=rand(35,45);
+              break;
+            case 3:
+              $name.="Long Red Oak ";
+              $damage+=rand(5,6);
+              $value+=rand(45,55);
+              break;
+            }
+          break;
+        case Level::LEVEL3:
+        switch (rand(1,3)) {
+          case 1:
+            $name = "";
+            $damage = rand(3,4);
+            $value = rand(30,45);
+            break;
+          case 2:
+            $name = "Good Made";
+            $damage = rand(4,5);
+            $value = rand(40,60);
+            break;
+          case 3:
+            $damage = rand(5,6);
+            $name = "Perfrctly Made ";
+            $value = rand(60,85);
+            break;
+          }
+        switch (rand(1,3)){
+          case 1:
+            $name.="Short Maple ";
+            $damage+=rand(5,6);
+            $value+=rand(60,80);
+            break;
+          case 2:
+            $name.="Maple ";
+            $damage+=rand(7,8);
+            $value+=rand(70,90);
+            break;
+          case 3:
+            $name.="Long Maple ";
+            $damage+=rand(8,10);
+            $value+=rand(85,110);
+            break;
+          }
+          break;
+        case Level::LEVEL4:
+          // code...
+          break;
+        case Level::LEVEL5:
+          // code...
+          break;
+        case Level::LEVEL6:
+          // code...
+          break;
+        default: //LEVEL7 i guess
+          // code...
+          break;
+      }
+        $name .= "Bow";
+        return new Bow($damage, $name, $value, $l);
+    }
+
 
   static function GenerateArmour(Level $l, ItemKind $ik) : Armour{
     $armour;
