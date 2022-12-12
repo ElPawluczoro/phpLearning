@@ -20,9 +20,34 @@
     require_once "Classes/Items/GenerateItem.php";
 
 
-$goods = array(GenerateItem::GenerateArmour(Level::LEVEL1, ItemKind::HEAD_ARMOUR), GenerateItem::GenerateArmour(Level::LEVEL1, ItemKind::HEAD_ARMOUR), GenerateItem::GenerateArmour(Level::LEVEL1, ItemKind::HEAD_ARMOUR), GenerateItem::GenerateArmour(Level::LEVEL1, ItemKind::HEAD_ARMOUR), GenerateItem::GenerateArmour(Level::LEVEL1, ItemKind::HEAD_ARMOUR), GenerateItem::GenerateArmour(Level::LEVEL1, ItemKind::HEAD_ARMOUR));
-$shop1 = new shop($goods);
-$shop1->DisplayGoods();
+$weapon = GenerateItem::GenerateMeleWeapon(Level::LEVEL1);
+$warrior1= new Warrior(1,10,"Danik");
+$warrior1->AddToEquipment($weapon);
+$warrior1->DisplayEquipment();
+$warrior1->DisplayGear();
+$warrior1->DisplayInformation();
+$warrior1->EquipItem(1);
+$warrior1->DisplayEquipment();
+$warrior1->DisplayGear();
+$warrior1->DisplayInformation();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -50,9 +50,9 @@ function Sell(int $i, Hero $h){
   $item=$eq[$i-1];
 if($i<=count($eq)){
   if($eq[$i-1]->GetKind()==ItemKind::LOOT_OBJECT){
-    $h->AddToPocket(new Coins($item->GetQuantity()*$item->GetValue()));
-  }else if($eq[$i-1]->GetKind()==ItemKind::WEAPON){
-    $h->AddToPocket(new Coins($item->GetValue()));
+    $h->AddToPocket(new Coins(intval($item->GetQuantity()*$item->GetValue()*0.6)));
+  }else if($eq[$i-1]->GetKind()!=ItemKind::CURRENCY){
+    $h->AddToPocket(new Coins(intval($item->GetValue()*0.6)));
   }
   $h->RemoveFromEquipment($i);
 }
