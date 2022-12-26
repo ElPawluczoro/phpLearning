@@ -45,6 +45,10 @@ abstract class NonCurrencyItem extends Item{
 abstract class EquipableItem extends NonCurrencyItem {
   protected $requaierdLevel;
 
+  protected $damage;
+  protected $healthPoints;
+  protected $armour;
+
   function __construct(string $n, int $v, Level $rq){
     $this->name = $n;
     $this->value = $v;
@@ -55,6 +59,10 @@ abstract class EquipableItem extends NonCurrencyItem {
     parent::DisplayInformation();
     echo "Requaierd Level: " . HeroMethods::LevelToInt($this->requaierdLevel) . "<br>";
   }
+
+  function GetDamage() : int {
+    return $this->damage;
+}
 
 }
 

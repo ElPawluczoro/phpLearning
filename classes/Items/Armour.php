@@ -17,9 +17,6 @@ class ArmourFunctions {
 }
 
 class Armour extends EquipableItem {
-  protected $armourKind;
-  protected $armour;
-  protected $healthPoints;
 
   function __construct(int $a, int $h, string $n, int $v, Level $rq, ArmourKind $ak){
       parent::__construct($n, $v, $rq);
@@ -50,10 +47,6 @@ class Armour extends EquipableItem {
 }
 
 class HeadArmour extends Armour{
-  protected $armourKind;
-  protected $armour;
-  protected $healthPoints;
-
   function __construct(int $a, int $h, string $n, int $v, Level $rq, ArmourKind $ak){
       parent::__construct($a, $h, $n, $v, $rq, $ak );
       $this->kind = ItemKind::HEAD_ARMOUR;

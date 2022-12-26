@@ -18,18 +18,11 @@
     require_once "Classes/Location/Location.php";
     require_once "Classes/Location/Place.php";
     require_once "Classes/Items/GenerateItem.php";
+    require_once "Classes/Items/OffHand.php";
 
 
-$weapon = GenerateItem::GenerateMeleWeapon(Level::LEVEL1);
-$warrior1= new Warrior(1,10,"Danik");
-$warrior1->AddToEquipment($weapon);
-$warrior1->DisplayEquipment();
-$warrior1->DisplayGear();
-$warrior1->DisplayInformation();
-$warrior1->EquipItem(1);
-$warrior1->DisplayEquipment();
-$warrior1->DisplayGear();
-$warrior1->DisplayInformation();
+$offHand1 = new Shield("OffHand", 5, Level::LEVEL1, 3, 1, 1);
+$offHand1->DisplayInformation();
 
 
 

@@ -757,23 +757,39 @@ class GenerateItem {
               else if($armourKind == ArmourKind::MEDIUM_ARMOUR){$name.="Medium Byrnie";}
               else{$name.="Robe";}
               return new BodyArmour($armour, $hp, $name, $value, $l, $armourKind);
+              break;
             case ItemKind::GLOVES:
               if($armourKind == ArmourKind::HEAVY_ARMOUR){$name.="Heavy Gauntlets";}
               else if($armourKind == ArmourKind::MEDIUM_ARMOUR){$name.="Gloves";}
               else{$name.="Thin gloves";}
               return new Gloves($armour, $hp, $name, $value, $l, $armourKind);
+              break;
             case ItemKind::LEGS_ARMOUR:
               if($armourKind == ArmourKind::HEAVY_ARMOUR){$name.="Heavy Legs";}
               else if($armourKind == ArmourKind::MEDIUM_ARMOUR){$name.="Chausses";}
               else{$name.="Chausses";}
               return new Gloves($armour, $hp, $name, $value, $l, $armourKind);
+              break;
             case ItemKind::BOOTS:
               if($armourKind == ArmourKind::HEAVY_ARMOUR){$name.="Heavy Sabatons";}
               else if($armourKind == ArmourKind::MEDIUM_ARMOUR){$name.="Rugged Shoes";}
               else{$name.="Shoes";}
               return new Gloves($armour, $hp, $name, $value, $l, $armourKind);
+              break;
             }
           }
+  // function GenerateOffHand(Level $l) : OffHand{
+  //   switch(rand(1,2)){
+  //     case 1:
+  //       switch($l){
+  //         case Level::LEVEL1:
+  //
+  //       }
+  //   }
+  //
+  // }
+
+
         }
 
 

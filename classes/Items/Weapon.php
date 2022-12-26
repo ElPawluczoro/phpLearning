@@ -9,8 +9,6 @@ enum WeaponKind{
 }
 
 class Weapon extends EquipableItem{
-  protected $weaponKind;
-  protected $damage;
   //protected $eqKind; //chyba nic nie robi
 
   function __construct(int $d, string $n, int $v, Level $rq){
@@ -18,10 +16,6 @@ class Weapon extends EquipableItem{
     $this->kind = ItemKind::WEAPON;
     $this->damage = $d;
   }
-
-  function GetDamage() : int {
-    return $this->damage;
-}
 
   function DisplayInformation(){
     parent::DisplayInformation();
@@ -53,7 +47,6 @@ class Bow extends Weapon{
     $this->weaponKind = WeaponKind::BOW;
   }
 }
-
 
 
 
