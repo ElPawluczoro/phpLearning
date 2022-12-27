@@ -21,8 +21,16 @@ abstract class OffHand extends EquipableItem{
 
     function DisplayInformation(){
       parent::DisplayInformation();
-      echo "Damage: $this->damage <br> HP: $this->healthPoints
-            <br> Armour: $this->armour <br>---------------------<br>";
+      if($this->damage!=0){
+        echo "Damage: $this->damage <br>";
+      }
+      if($this->healthPoints!=0){
+        echo "HP: $this->healthPoints <br>";
+      }
+      if($this->armour!=0){
+        echo "Armour: $this->armour <br>";
+      }
+        echo "---------------------<br>";
     }
   }
 

@@ -64,6 +64,14 @@ abstract class EquipableItem extends NonCurrencyItem {
     return $this->damage;
 }
 
+function GetArmour() : int {
+  return $this->armour;
+}
+
+function GetHealthPoints() : int {
+  return $this->healthPoints;
+}
+
 }
 
 

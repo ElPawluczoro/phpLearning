@@ -21,8 +21,19 @@
     require_once "Classes/Items/OffHand.php";
 
 
-$offHand1 = new Shield("OffHand", 5, Level::LEVEL1, 3, 1, 1);
+$offHand1 = GenerateItem::GenerateOffHand(Level::LEVEL1);
 $offHand1->DisplayInformation();
+$hero1 = new Warrior(10, 10, "Danik");
+$hero1->AddToEquipment($offHand1);
+$hero1->AddToEquipment(GenerateItem::GenerateMeleWeapon(Level::LEVEL1));
+$hero1->DisplayInformation();
+$hero1->DisplayEquipment();
+$hero1->DisplayGear();
+$hero1->EquipItem(1);
+$hero1->EquipItem(1);
+$hero1->DisplayInformation();
+$hero1->DisplayEquipment();
+$hero1->DisplayGear();
 
 
 

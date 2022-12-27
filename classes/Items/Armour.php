@@ -25,13 +25,13 @@ class Armour extends EquipableItem {
       $this->armourKind = $ak;
   }
 
-  function GetArmour() : int {
-    return $this->armour;
-  }
-
-  function GetHealthPoints() : int {
-    return $this->healthPoints;
-  }
+  // function GetArmour() : int {
+  //   return $this->armour;
+  // }
+  //
+  // function GetHealthPoints() : int {
+  //   return $this->healthPoints;
+  // }
 
   function GetArmourKind() : ArmourKind {
     return $this->armourKind;

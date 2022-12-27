@@ -1,6 +1,7 @@
 <?php
 
 require_once "Classes/Unit/Hero.php";
+require_once "Classes/Items/OffHand.php";
 
 class GenerateItem {
   static function GenerateMeleWeapon(Level $l) : Weapon{
@@ -778,16 +779,71 @@ class GenerateItem {
               break;
             }
           }
-  // function GenerateOffHand(Level $l) : OffHand{
-  //   switch(rand(1,2)){
-  //     case 1:
-  //       switch($l){
-  //         case Level::LEVEL1:
-  //
-  //       }
-  //   }
-  //
-  // }
+  static function GenerateOffHand(Level $l) : OffHand{
+    $name = "";
+    $dmg = 0;
+    $hp = 0;
+    $a = 0;
+    $v = 0;
+
+    switch(rand(1,2)){ //dagger or shield
+      case 1: //Dagger
+        switch($l){
+          case Level::LEVEL1:
+            switch(rand(1,3)){
+              case 1:
+                $name.="Sharp";
+                $dmg = rand(1,2);
+                break;
+              case 2:
+                $name.="Defensive";
+                $a = rand(1,2);
+                break;
+              case 3:
+                $name.="Vital";
+                $hp = rand(2,3);
+                break;
+            }
+              $name.=" Dagger";
+              $dmg += rand(1,2);
+              $v = rand(10,15);
+              break;
+            case Level::LEVEL2:
+            case Level::LEVEL3:
+            case Level::LEVEL4:
+            case Level::LEVEL5:
+            case Level::LEVEL6:
+            default: break; //LEVEL7
+        }
+        return new Dagger($name, $v, $l, $dmg, $hp, $a);
+      case 2: //Shield
+        switch($l){
+          case Level::LEVEL1:
+          switch(rand(1,2)){
+            case 1:
+              $name.= "Defensive";
+              $a = rand(1,2);
+              break;
+            case 2;
+              $name.= "Vital";
+              $hp = rand(2,5);
+              break;
+        }
+          $name.=" Shield";
+          $a+=rand(0,1);
+          $hp+=rand(1,3);
+          $v = rand(10,15);
+          break;
+          case Level::LEVEL2:
+          case Level::LEVEL3:
+          case Level::LEVEL4:
+          case Level::LEVEL5:
+          case Level::LEVEL6:
+          default: break; //LEVEL7
+      }
+      return new Shield($name, $v, $l, $dmg, $hp, $a);
+    }
+  }
 
 
         }

@@ -97,41 +97,34 @@ abstract class Hero extends Unit{
           $this->mainHand = $item;
           $this->damage+=$item->GetDamage();
           $this->RemoveFromEquipment($i);
-        }else if(in_array($item->GetKind(), $armours)){
+        }else if($item->GetKind()==ItemKind::OFF_HAND){
+            $this->offHand = $item;
+            $this->armour+=$item->GetArmour();
+            $this->healthPoints+=$item->GetHealthPoints();
+            $this->damage+=$item->GetDamage();
+            $this->RemoveFromEquipment($i);
+        }
+        else if(in_array($item->GetKind(), $armours)){
           switch ($item->GetKind()){
           case ItemKind::HEAD_ARMOUR:
             $this->head = $item;
-            // $this->armour+=$item->GetArmour();
-            // $this->healthPoints+=$item->GetHealthPoints();
-            // $this->RemoveFromEquipment($i);
             break;
           case ItemKind::BODY_ARMOUR:
             $this->body = $item;
-            // $this->armour+=$item->GetArmour();
-            // $this->healthPoints+=$item->GetHealthPoints();
-            // $this->RemoveFromEquipment($i);
             break;
           case ItemKind::GLOVES:
             $this->gloves = $item;
-            // $this->armour+=$item->GetArmour();
-            // $this->healthPoints+=$item->GetHealthPoints();
-            // $this->RemoveFromEquipment($i);
             break;
           case ItemKind::LEGS_ARMOUR:
             $this->legs = $item;
-            // $this->armour+=$item->GetArmour();
-            // $this->healthPoints+=$item->GetHealthPoints();
-            // $this->RemoveFromEquipment($i);
             break;
           case ItemKind::BOOTS:
             $this->boots = $item;
-            // $this->armour+=$item->GetArmour();
-            // $this->healthPoints+=$item->GetHealthPoints();
-            // $this->RemoveFromEquipment($i);
             break;
           }
           $this->armour+=$item->GetArmour();
           $this->healthPoints+=$item->GetHealthPoints();
+          $this->damage+=$item->GetDamage();
           $this->RemoveFromEquipment($i);
         }
       }
@@ -253,7 +246,7 @@ abstract class Hero extends Unit{
           echo " d" . $value->GetDamage() . "<br>";
         }else if (in_array($value->GetKind(), $armours)){
           echo " a" . $value->GetArmour() . " hp" . $value->GetHealthPoints() . "<br>";
-        }
+        }else echo "<br>";
       }
       echo "---------------------<br>";
     }
@@ -266,6 +259,7 @@ abstract class Hero extends Unit{
       echo "Legs: "; if(isset($this->legs)) echo $this->legs->GetName(); echo "<br>";
       echo "Boots: "; if(isset($this->boots)) echo $this->boots->GetName(); echo "<br>";
       echo "Main Hand: "; if(isset($this->mainHand)) echo $this->mainHand->GetName() . " d" . $this->mainHand->GetDamage(); echo "<br>";
+      echo "Off Hand: "; if(isset($this->offHand)) echo $this->offHand->GetName(); echo "<br>";
       echo "---------------------<br>";
     }
 
