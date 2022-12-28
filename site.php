@@ -21,21 +21,16 @@
     require_once "Classes/Items/OffHand.php";
 
 
-$offHand1 = GenerateItem::GenerateOffHand(Level::LEVEL1);
-$offHand1->DisplayInformation();
-$hero1 = new Warrior(10, 10, "Danik");
-$hero1->AddToEquipment($offHand1);
-$hero1->AddToEquipment(GenerateItem::GenerateMeleWeapon(Level::LEVEL1));
-$hero1->DisplayInformation();
-$hero1->DisplayEquipment();
-$hero1->DisplayGear();
-$hero1->EquipItem(1);
-$hero1->EquipItem(1);
-$hero1->DisplayInformation();
-$hero1->DisplayEquipment();
-$hero1->DisplayGear();
+$goblin1 = new Goblin();
+$goblin1->displayDropList();
+$goblin1->DisplayInformation();
+$warrior1 = new Warrior(15,4,"Danik");
+$warrior1->DisplayInformation();
 
+Fight::Fight($warrior1, $goblin1);
 
+$warrior1->DisplayInformation();
+$warrior1->DisplayEquipment();
 
 
 
